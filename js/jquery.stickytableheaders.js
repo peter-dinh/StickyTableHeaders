@@ -15,7 +15,8 @@
 			objWindow: window,
 			scrollableArea: window,
 			cacheHeaderHeight: false,
-			zIndex: 3
+			zIndex: 3,
+			iModal: null,
 		};
 
 	function Plugin (el, options) {
@@ -162,11 +163,11 @@
 					}
 
 					if (scrolledPastTop && notScrolledPastBottom) {
-						newLeft = offset.left - scrollLeft + base.options.leftOffset;
+						newLeft = (base.$iModal ? offset.left - base.$iModal.leftOffset : offset.left) - scrollLeft + base.options.leftOffset;
 						base.$originalHeader.css({
 							'position': 'fixed',
 							'margin-top': base.options.marginTop,
-                                                        'top': 0,
+                            'top': 0,
 							'left': newLeft,
 							'z-index': base.options.zIndex
 						});
@@ -290,6 +291,7 @@
 			base.$document = $(base.options.objDocument);
 			base.$scrollableArea = $(base.options.scrollableArea);
 			base.isWindowScrolling = base.$scrollableArea[0] === base.$window[0];
+			base.$iModal = base.options.iModal;
 		};
 
 		base.updateOptions = function (options) {

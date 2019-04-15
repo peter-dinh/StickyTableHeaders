@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 8]><html lang="en" class="legacy"><![endif]-->
+<!--[if gte IE 8]><!--><html lang="en"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Sticky Table Header in Modal Bootstrap</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+        #exampleModal {
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .modal-dialog{
+            height: 100%;
+        
+            padding: 30px 0;
+            margin: 0 auto;
+        }
+        .modal-content{
+            max-height: 100%;
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+        }
+        .modal-header{
+            height: 100px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 1rem;
+            border-bottom: 1px solid #e9ecef;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        .modal-body{
+            overflow: auto;
+            min-height: 0;
+            padding: 0;
+        }
+        .filter{
+            padding-top: 10px;
+            padding-right: 16px;
+            padding-bottom: 10px;
+            padding-left: 16px;
+        }
+        .table{
+            background: white;
+        }
+
+        .table thead{
+            background: white;
+        }
+        #button{
+            margin-top:100px;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Sticky Table Header in Modal Bootstrap</a>
+        </div>
+        <div class="navbar-collapse collapse">
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+    <div class="container">
+
+      <!-- Button trigger modal -->
+    <button type="button" id="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="filter">
+                        <input type="text" placeholder="Search..">
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>Label</th>
+                                <th>Layout width</th>
+                                <th>Column width</th>
+                                <th>Gutter width</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Smartphones</td>
+                                <td>480px and below</td>
+                                <td class="muted" colspan="2">Fluid columns, no fixed widths</td>
+                            </tr>
+                            <tr>
+                                <td>Smartphones to tablets</td>
+                                <td>767px and below</td>
+                                <td class="muted" colspan="2">Fluid columns, no fixed widths</td>
+                            </tr>
+                            <tr>
+                                <td>Portrait tablets</td>
+                                <td>768px and above</td>
+                                <td>42px</td>
+                                <td>20px</td>
+                            </tr>
+                            <tr>
+                                <td>Default</td>
+                                <td>980px and up</td>
+                                <td>60px</td>
+                                <td>20px</td>
+                            </tr>
+                            <tr>
+                                <td>Large display</td>
+                                <td>1200px and up</td>
+                                <td>70px</td>
+                                <td>30px</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="../js/jquery.stickytableheaders.js"></script>
+  <script src="js/custom.js"></script>
+
+  </body>
+</html>
