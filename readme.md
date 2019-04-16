@@ -81,6 +81,16 @@ The plugin uses z-index to make the thead overlay the body. You can override the
 $('table').stickyTableHeaders({zIndex: 999});
 ```
 
+#### Modal
+
+```js
+$table.stickyTableHeaders({ 
+   scrollableArea: $(".modal-body")[0], 
+   'fixedOffset': filter_height,
+   iModal: {leftOffset: $('.modal-body').offset().left - 1}
+});
+```
+
 ### Reinitialize
 As described in [pull request #33](https://github.com/jmosbech/StickyTableHeaders/pull/33) responsive pages might need to reinitialize the plugin when the user resizes his browser. This is can be done by calling the plugin with the new options:
 
