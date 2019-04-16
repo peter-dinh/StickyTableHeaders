@@ -82,7 +82,8 @@ $('table').stickyTableHeaders({zIndex: 999});
 ```
 
 #### Modal
-
+ [Demo](https://peter-dinh.github.io/StickyTableHeaders/demo/bootstrap-modal.html):
+ 
 ```js
 $table.stickyTableHeaders({ 
    scrollableArea: $(".modal-body")[0], 
